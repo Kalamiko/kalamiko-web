@@ -143,15 +143,18 @@ body, nav, ul, li, div, footer, label, header{
     border-radius: 6px;
     padding: 3px;
     background-color: #FEFEFE;
+    transition: background-color .25s, border .25s, box-shadow .25s;
 }
 .load__bar-bar{
     background-color: #3E93B2;
     padding: 8px;
     border-radius: 3px;
+    transition: background-color .25s;
 }
 .profile__skill-name{
     margin-left: 10px;
     font-weight: 500;
+    transition:  color .25s, text-shadow .25s;
 }
 .bar--80{
     width: 80%;
@@ -194,15 +197,18 @@ h2{
 
 .footer{
     background-color: #221E1D;
+    min-width: 400px;
 }
 .footer__container{
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 .h2__footer{
     margin: 0;
     color: #FEFEFE;
     text-shadow: none;
+    font-size: 20px;
 }
