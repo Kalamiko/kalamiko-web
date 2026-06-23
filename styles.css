@@ -118,8 +118,13 @@ body, nav, ul, li, div, footer, label, header{
     max-width: 1000px;
 
 }
+.profile__img-container{
+    max-height: 550px;
+    overflow: hidden;
+}
 .profile__img{
     max-width: 100%;
+    width: 900px;
 
 }
 .profile__data-container{
@@ -198,13 +203,13 @@ h2{
 .footer{
     background-color: #221E1D;
     min-width: 400px;
+    padding: 30px;
 }
 .footer__container{
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 .h2__footer{
     margin: 0;
