@@ -145,7 +145,7 @@ body:has(.header__checkbox:checked) .portfolio{
     outline: 2px solid #221E1D;
     box-shadow: 0 0 20px #FEFEFE;
     max-width:700px ;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 .skill__bar{
     list-style: none;
@@ -227,7 +227,7 @@ h2{
         width: 600px;
     }
     .profile__data-container{
-        margin: 0;
+        margin-bottom: 20px;
     }
     .profile{
         margin-bottom: 20px;
@@ -235,51 +235,63 @@ h2{
 }
 /* ---------- PROFILE ENDS */
 /* ---------- PORTFOLIO SECTION */
+
 .portfolio{
-    background-color: #3D74AC;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    container-name: portfolio;
-    container-type: inline-size;
     width: 100%;
-    margin: auto;
+    background-color: #3D74AC;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    container-type: inline-size;
+    container-name: portfolio;
+    transition: background-color .25s;
 }
 .portfolio__title{
-    font-size: 40px;
-    margin-top: 10px;
-    font-family: permanent marker;
-    text-shadow: 0 3px 3px #fefe;
+    font-size: 30px;
+    transition: color .25s, text-shadow .25s;
 }
+
 .portfolio__project-container{
+    width: 90%;
+    height: 80vh;
     display: grid;
-    
-    width: 100%;
+    grid-template-columns: 1fr;
     gap: 20px;
-    height: 90vh;
-    padding: 20px;
-    max-width: 1500px;
+    max-width: 1300px;
+    margin: auto;
 }
 .portfolio__project{
-    background-image: linear-gradient(#0007,#0007),url(kalamiko__big.png);
+    background-image: linear-gradient(#0007,#0007), url(kalamiko__big-2--amarillo.png);
+    background-size: cover;
+    background-position: center;
     display: grid;
     place-content: center;
     border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    color: #ff0;
+    padding: 20px;
     transition: opacity .25s, color .25s, box-shadow .25s;
+    box-shadow: 0 0 10px #fefefe;
+
 }
+
 .portfolio__project:hover{
     opacity: .7;
     color: #fefefe;
-    box-shadow: 0 0 50px #fefefe;
+    box-shadow: 0 0 15px yellow;
+    background-image: url(kalamiko__big-2--amarillo.png);
 }
-
+body:has(.portfolio__project:hover) .portfolio{
+    background-color: rgb(44, 84, 124);
+}
+body:has(.portfolio__project:hover) .portfolio__title{
+    color: yellow;
+    text-shadow: 0 0 10px #000;
+}
 /* ----------- PORTFOLIO QUERIES */
 @container portfolio (min-width:970px){
     .portfolio__project-container{
+        display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
     .portfolio__project:first-child{
@@ -288,13 +300,16 @@ h2{
     .portfolio__project:nth-child(6){
         grid-column: span 2;
     }
+
 }
 @container portfolio (min-width: 1300px){
     .portfolio__project:first-child{
         grid-column: span 3;
     }
     .portfolio__project:nth-child(6){
-        grid-column: span 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
     }
 }
 
