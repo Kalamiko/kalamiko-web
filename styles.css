@@ -249,7 +249,8 @@ h2{
     transition: background-color .25s;
 }
 .portfolio__title{
-    font-size: 30px;
+    font-size: 60px;
+    margin-top: 50px;
     transition: color .25s, text-shadow .25s;
 }
 
@@ -259,8 +260,10 @@ h2{
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    max-width: 1300px;
+    max-width: 1250px;
     margin: auto;
+    margin-top: 20px;
+
 }
 .portfolio__project{
     background-image: linear-gradient(#0007,#0007), url(kalamiko__big-2--amarillo.png);
@@ -276,7 +279,6 @@ h2{
 }
 
 .portfolio__project:hover{
-    opacity: .7;
     color: #fefefe;
     box-shadow: 0 0 15px yellow;
     background-image: url(kalamiko__big-2--amarillo.png);
@@ -289,10 +291,10 @@ body:has(.portfolio__project:hover) .portfolio__title{
     text-shadow: 0 0 10px #000;
 }
 /* ----------- PORTFOLIO QUERIES */
-@container portfolio (min-width:970px){
+@container portfolio (min-width:800px){
     .portfolio__project-container{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
     .portfolio__project:first-child{
         grid-column: span 2;
@@ -302,14 +304,128 @@ body:has(.portfolio__project:hover) .portfolio__title{
     }
 
 }
-@container portfolio (min-width: 1300px){
+@container portfolio (min-width: 1000px){
     .portfolio__project:first-child{
         grid-column: span 3;
     }
-    .portfolio__project:nth-child(6){
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 3;
+    
+}
+/* -------------- PORTFOLIO ENDS */
+/* --------------- FORM SECTION */
+.form{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    background-color: #3E93B2;
+    container-type: inline-size;
+    container-name: form;
+    transition: background-color .25s;
+}
+.form__title{
+    font-size: 50px;
+    transition: color .25s, text-shadow .25s;
+}
+.form__form{
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    display: grid;
+    gap: 20px;
+}
+.form__input-container :is(input, textarea){
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #fefefe;
+    box-shadow: 0 0 10px #fefefe;
+    margin-top: 10px;
+}
+label{
+    font-size: 25px;
+}
+.form__input-container textarea{
+    resize: none;
+    min-height: 120px;
+    font-family: inherit;
+}
+.form__input-container:last-child input{
+    background-color: #3D74AC;
+    color: #fefefe;
+    padding: 20px 0;
+    transition: background-color .25s, color .25s;
+}
+body:has(.form__input-container input:focus,textarea:focus) .form__title{
+    color: yellow;
+    text-shadow: 0 0 15px #221E1D;
+}
+
+body:has(.form__input-container input:focus,textarea:focus) .form{
+    background-color: #3D74AC;
+}
+body:has(.form__input-container input:focus, textarea:focus) .form__input-container:last-child input{
+    background-color: #0007;
+    color: yellow;
+}
+
+body:has(.form__input-container input:focus, textarea:focus) .form__input-container label{
+    color: yellow;
+}
+
+
+/*------------------ FORM QUERIES  */
+@container form (min-width: 800px){
+    .form__form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        " nombre apellido"
+        " email email"
+        " mensaje mensaje"
+        "button button";
+    }
+    .form__input-container:first-child{
+        grid-area: nombre;
+    }
+    .form__input-container:nth-child(2){
+        grid-area: apellido;
+    }
+    .form__input-container:nth-child(3){
+        grid-area: email;
+    }
+    .form__input-container:nth-child(4){
+        grid-area: mensaje;
+    }
+    .form__input-container:nth-child(5){
+        grid-area: button;
+    }
+}
+/* ------------------ FORM ENDS */
+/* ------------------- FOOTER SECTION */
+.footer{
+    min-height: 100px;
+    background-color: #221E1D;
+    display: flex;
+}
+.footer__container{
+    margin: auto;
+    padding: 10px 0;
+    max-width: 1200px;
+    text-align: center;
+}
+.h2__footer{
+    color: yellow;
+    text-shadow: 0 0 0px #fefefe;
+    text-wrap: pretty;
+    transition: color .25s, text-shadow .25s;
+}
+.footer:hover{
+    .h2__footer{
+        color: #FEFEFE;
+        text-shadow: 0 0 10px #fefefe;
     }
 }
 
@@ -331,36 +447,3 @@ body:has(.portfolio__project:hover) .portfolio__title{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .footer{
-    background-color: #221E1D;
-    padding: 30px;
-    overflow: hidden;
-}
-.footer__container{
-    height: 4vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.h2__footer{
-    margin: 0;
-    color: #FEFEFE;
-    text-shadow: none;
-    font-size: 20px;
-} */
