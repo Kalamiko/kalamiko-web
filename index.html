@@ -18,13 +18,13 @@
         </div>
         <nav class="header__nav">
             <ul class="header__nav-list">
-                <li class="header__nav-item"><a href="#">Sobre mí</a></li>
-                <li class="header__nav-item"><a href="#">Portfolio</a></li>
-                <li class="header__nav-item"><a href="#">Contacto</a></li>
+                <li class="header__nav-item"><a href="#sobremi">Sobre mí</a></li>
+                <li class="header__nav-item"><a href="#portfolio">Portfolio</a></li>
+                <li class="header__nav-item"><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <main class="profile">
+    <main class="profile" id="sobremi">
         <div class="profile__wrapper">
             <div class="profile__img-container">
                 <img src="kalamiko__big-2.png" class="profile__img">
@@ -77,7 +77,7 @@
             </div>
         </div>
     </main>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2 class="portfolio__title">PORTFOLIO</h2>
         <div class="portfolio__project-container">
             <div class="portfolio__project">
@@ -100,10 +100,38 @@
             </div>
         </div>
     </section>
-    <!-- <footer class="footer">
+    <section class="form" id="contacto">
+        <h2 class="form__title">CONTACTO</h2>
+        <form class="form__form">
+            <div class="form__input-container">
+                <label for="">Nombre
+                    <input type="text" placeholder="Kalamaik" name="" id="">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Apellido
+                    <input type="text" placeholder="Kalamikez" name="" id="">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Email
+                    <input type="email" placeholder="kalamiko@kalamaik.com" name="" id="">
+                </label>
+            </div>
+            <div class="form__input-container">
+                <label for="">Mensaje
+                    <textarea placeholder="dfjalkfjalfjdas" name="" id=""></textarea>
+                </label>
+            </div>
+            <div class="form__input-container">
+                <input type="submit" name="" id="">
+            </div>
+        </form>
+    </section>
+    <footer class="footer">
         <div class="footer__container">
-            <h2 class="h2__footer">©Copyright Kalamiko™ 2027, todos los derechos reservados a Kalamiko, Kalamiko se encuentra en una prision estatal.</h2>
+            <h2 class="h2__footer">©Copyright Kalamiko™ 2027, todos los derechos reservados a Kalamiko, Kalamiko se encuentra en una prisión estatal.</h2>
         </div>
-    </footer> -->
+    </footer>
 </body>
 </html>
