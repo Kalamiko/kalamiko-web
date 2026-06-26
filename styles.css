@@ -3,7 +3,7 @@ body{
     font-family: outfit;
     background-color: #3E93B2;
     color: #221E1D;
-
+    scroll-behavior: smooth;
 }
 *{
     box-sizing: border-box;
@@ -11,7 +11,6 @@ body{
 body, nav, ul, li, div, footer, label, header{
     margin: 0;
     padding: 0;
-    
 }
 /*------------------------ HEADER SECTION*/
 .header{
@@ -21,8 +20,9 @@ body, nav, ul, li, div, footer, label, header{
     background-color: #3D74AC;
     container-type: inline-size;
     container-name: header;
-    box-shadow: 0px 3px 8px #3D74AC;
-    position: relative;
+    box-shadow: 0px 3px 8px #0007;
+    position: sticky;
+    top: 0;
     z-index: 10;
     text-align: center;
 }
@@ -30,6 +30,11 @@ body, nav, ul, li, div, footer, label, header{
     width: 200px;
     margin:10px 20px;
     /* filter: drop-shadow(0 3px 2px #FEFEFE); */
+}
+.header__logo--amarillo{
+    display: none;
+    width: 200px;
+    margin:10px 20px;
 }
 .header__checkbox{
     display: none;
@@ -56,12 +61,13 @@ body, nav, ul, li, div, footer, label, header{
 .header__checkbox:checked ~.header__nav{
     display: flex;
 }
-body:has(.header__checkbox:checked) .profile{
+body:has(.header__checkbox:checked) :is(.profile, .portfolio, .form, .footer, .header__logo){
     display: none;
 }
-body:has(.header__checkbox:checked) .portfolio{
-    display: none;
+body:has(.header__checkbox:checked) .header__logo--amarillo{
+    display: block;
 }
+
 .header__nav-list{
     margin: auto;
     height: 100vh;
@@ -75,6 +81,7 @@ body:has(.header__checkbox:checked) .portfolio{
     color: #221E1D;
     text-decoration: none;
     font-family: permanent marker;
+    font-weight: 500;
     text-shadow: 0 2px 2px #FEFEFE;
 }
 .header__nav-item a:is(:hover, :active){
@@ -92,8 +99,6 @@ body:has(.header__checkbox:checked) .portfolio{
         height: auto;
         width: auto;
         z-index: 10;
-
-
     }
     .header__nav-list{
         flex-direction: row;
@@ -107,6 +112,7 @@ body:has(.header__checkbox:checked) .portfolio{
     .header__logo{
         max-width: 200px;
     }
+    
 }
 
 
@@ -207,7 +213,6 @@ h2{
         color: #fefefe;
         text-shadow: 0 2px 9px #fefefe;
     }
-
 }
 /* --------------- PROFILE QUERIES */
 @container profile (min-width:970px){
@@ -412,7 +417,8 @@ body:has(.form__input-container input:focus, textarea:focus) .form__input-contai
 }
 .footer__container{
     margin: auto;
-    padding: 10px 0;
+    font-size: 14px;
+    padding: 10px 10px;
     max-width: 1200px;
     text-align: center;
 }
